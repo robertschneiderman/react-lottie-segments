@@ -99,8 +99,14 @@ export default class Lottie extends React.Component {
     this.anim.play();
   }
 
-  playSegments() {
+  playSegments(args) {
     const { segments, forceFlag } = this.props.playSegments;
+
+    if (args) {
+      segments = args.value;
+      forceFlag = args.forceFlag;
+    }
+    
     this.anim.playSegments(segments, forceFlag);
   }
 
@@ -117,7 +123,6 @@ export default class Lottie extends React.Component {
   }
 
   goToAndPlay() {
-    console.log('#goToAndPlay ', this.props.goToAndPlay);
     const { value, isFrame } = this.props.goToAndPlay;
     this.anim.goToAndPlay(value, isFrame);
   }
