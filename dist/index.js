@@ -211,10 +211,15 @@ var Lottie = function (_React$Component) {
     }
   }, {
     key: 'goToAndStop',
-    value: function goToAndStop() {
+    value: function goToAndStop(args) {
       var _props$goToAndStop = this.props.goToAndStop,
           value = _props$goToAndStop.value,
           isFrame = _props$goToAndStop.isFrame;
+
+      if (args) {
+        value = args.value,
+        isFrame = args.isFrame;
+      }
 
       this.anim.goToAndStop(value, isFrame);
     }
